@@ -43,5 +43,5 @@ jobs:
       working-directory: ${{ env.AZURE_SPRING_CLOUD_PACKAGE_PATH }}
     - name: Deploy app
       run: >
-        #az spring-cloud app deploy -n "${{ env.AZURE_SPRING_CLOUD_APP }}" --deployment "${{ env.AZURE_SPRING_CLOUD_DEPLOYMENT_NAME }}" --runtime-version ${{ env.SPRING_CLOUD_RUNTIME }} --main-entry "${{ env.APPLICATION_ENTRY_POINT }}" --artifact-path "${{ env.AZURE_SPRING_CLOUD_PACKAGE_PATH }}/${{ env.ZIP_FILE_NAME }}" -s ${{ env.AZURE_SPRING_CLOUD }} -g ${{ env.AZURE_RESOURCE_GROUP }}
-        az spring-cloud app logs -n "${{ env.AZURE_SPRING_CLOUD_APP }}" -s ${{ env.AZURE_SPRING_CLOUD }} -g ${{ env.AZURE_RESOURCE_GROUP }}
+        az spring-cloud app deploy logs -n "${{ env.AZURE_SPRING_CLOUD_APP }}" --deployment "${{ env.AZURE_SPRING_CLOUD_DEPLOYMENT_NAME }}" --runtime-version ${{ env.SPRING_CLOUD_RUNTIME }} --main-entry "${{ env.APPLICATION_ENTRY_POINT }}" --artifact-path "${{ env.AZURE_SPRING_CLOUD_PACKAGE_PATH }}/${{ env.ZIP_FILE_NAME }}" -s ${{ env.AZURE_SPRING_CLOUD }} -g ${{ env.AZURE_RESOURCE_GROUP }}
+        #az spring-cloud app logs -n "${{ env.AZURE_SPRING_CLOUD_APP }}" -s ${{ env.AZURE_SPRING_CLOUD }} -g ${{ env.AZURE_RESOURCE_GROUP }}
